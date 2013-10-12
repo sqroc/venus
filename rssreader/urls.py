@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from rssreader.views import *
+from venus.views import *
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -14,9 +15,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    (r'^time/$', current_datetime),
-    (r'^upload/$', upload_file),
-    (r'^zupload/$', upload_file2),
+    (r'^getrss/$', get_rss),
+    (r'^uploadopmlfile/$', upload_opml_file),
+    (r'^uploadopml/$', upload_opml),
     (r'^search-form/$', search_form),
     (r'^search/$', search),
 )
