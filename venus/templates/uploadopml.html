@@ -1,0 +1,7 @@
+<html>
+<form enctype="multipart/form-data" method="POST" action="/uploadopmlfile/">
+{% csrf_token %}
+<input type="file" name="file" /><br/>
+<input type="submit" value="上传OPML文件" />
+</form>
+</html>
