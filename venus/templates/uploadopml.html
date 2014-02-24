@@ -1,4 +1,6 @@
 <html>
+{% load staticfiles %}
+<img src="{% static 'img/1.png' %}" />
 <form enctype="multipart/form-data" method="POST" action="/uploadopmlfile/">
 {% csrf_token %}
 <input type="file" name="file" /><br/>
