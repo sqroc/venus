@@ -32,9 +32,7 @@ def upload_opml_file(request):
      return render_to_response('resultopml.html', locals())
      
 def get_rss(request):
-    myrss = Rss.objects.filter(uid=1)
-    urllib2.urlopen( 'http://www.dbanotes.net/atom.xml' ).read()
-    #d = feedparser.parse('http://www.dbanotes.net/atom.xml')
-    #title = d['feed']['title']
-    title = 'ddd'
+    myrss = Rss.objects.filter(rid=49)
+    d = feedparser.parse(myrss[0].xmlurl)
+    title = d.entries[0].content[0].value
     return render_to_response('resultopml.html', locals())
